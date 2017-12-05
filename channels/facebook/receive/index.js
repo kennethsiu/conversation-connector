@@ -142,7 +142,9 @@ function main(params) {
 function getPayloadForActionInvocation(params, auth) {
   let actionName;
   let actionParams;
-  let PayLoad = {
+  let payload = 
+    {"payload" : 
+    {
     "template_type":"button",
     "text":"<MESSAGE_TEXT>",
     "buttons":[
@@ -152,7 +154,11 @@ function getPayloadForActionInvocation(params, auth) {
       "title": "View map"
      }
    ]
+   }
   };
+ // const WatsonText = {
+ //   "Would you like to know more details?" : 
+ // }
   const Response = [
     ['My Location', 'Other'],
     ['Yes', 'No']
