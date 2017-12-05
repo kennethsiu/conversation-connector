@@ -146,14 +146,14 @@ function getPayloadForActionInvocation(params, auth) {
      {
       "type": "open Google map",
       "url": "https://goo.gl/maps/nFD4jTfYwsF2",
-      "title": "View map",
+      "title": "View map"
      }
    ]
-  }
-  const buttons = [
+  };
+  const Response = [
     ['My Location', 'Other'],
     ['Yes', 'No']
-  ]
+  ];
   
   
   // Check if it's a batched message
