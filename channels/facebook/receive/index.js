@@ -160,6 +160,8 @@ function getPayloadForActionInvocation(params, auth) {
   if (isBatchedMessage(params)) {
     // Set action params and action name for batched messages invocation
     actionParams = params;
+    console.log(params);
+ 
     // Attach auth to params
     actionParams.auth = auth;
     actionName = params.batched_messages;
