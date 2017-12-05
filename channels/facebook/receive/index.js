@@ -75,6 +75,7 @@ const CLOUDANT_AUTH_KEY = 'cloudant_auth_key';
  */
 
 function main(params) {
+  console.log("HELLLLOOOO");
   return new Promise((resolve, reject) => {
     try {
       validateParameters(params);
