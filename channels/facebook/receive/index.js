@@ -145,8 +145,8 @@ function getPayloadForActionInvocation(params, auth) {
     "buttons":[
      {
       "type": "open Google map",
-      "url": "<URL_TO_OPEN_IN_WEBVIEW>",
-      "title": "<BUTTON_TEXT>",
+      "url": "https://goo.gl/maps/nFD4jTfYwsF2",
+      "title": "View map",
      }
    ]
   }
