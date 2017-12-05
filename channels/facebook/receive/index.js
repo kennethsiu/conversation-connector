@@ -156,12 +156,14 @@ function getPayloadForActionInvocation(params, auth) {
    ]
    }
   };
- // const WatsonText = {
- //   "Would you like to know more details?" : 
- // }
+  const WatsonText = {
+    "Would you like to know more details?" : 1,
+    "What would you like to know more about?" : 2   
+  }
   const Response = [
     ['My Location', 'Other'],
-    ['Yes', 'No']
+    ['Yes', 'No'],
+    ['Traffic', 'TSA Lines', 'Flight delays']
   ];
    console.log(params);
   
