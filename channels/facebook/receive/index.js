@@ -108,10 +108,12 @@ function main(params) {
           }
           // Get the appropriate payload for action invocation i.e. depending on whether it's a
           // a batched message or not we construct the appropriate payload
+          console.log("Before call to getPayLoad");
           const [actionParams, actionName] = getPayloadForActionInvocation(
             params,
             auth
           );
+          console.log("After call to getPayLoad");
           // Invoke appropriate Cloud Functions action
           return invokeAction(actionParams, actionName);
         }
