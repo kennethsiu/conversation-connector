@@ -139,6 +139,23 @@ function main(params) {
 function getPayloadForActionInvocation(params, auth) {
   let actionName;
   let actionParams;
+  let PayLoad = {
+    "template_type":"button",
+    "text":"<MESSAGE_TEXT>",
+    "buttons":[
+     {
+      "type": "open Google map",
+      "url": "<URL_TO_OPEN_IN_WEBVIEW>",
+      "title": "<BUTTON_TEXT>",
+     }
+   ]
+  }
+  const buttons = [
+    ['My Location', 'Other'],
+    ['Yes', 'No']
+  ]
+  
+  
   // Check if it's a batched message
   if (isBatchedMessage(params)) {
     // Set action params and action name for batched messages invocation
