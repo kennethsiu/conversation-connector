@@ -154,6 +154,7 @@ function getPayloadForActionInvocation(params, auth) {
     ['My Location', 'Other'],
     ['Yes', 'No']
   ];
+   console.log(params);
   
   
   // Check if it's a batched message
