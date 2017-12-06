@@ -108,12 +108,10 @@ function main(params) {
           }
           // Get the appropriate payload for action invocation i.e. depending on whether it's a
           // a batched message or not we construct the appropriate payload
-          console.log("Before call to getPayLoad");
           const [actionParams, actionName] = getPayloadForActionInvocation(
             params,
             auth
           );
-          console.log("After call to getPayLoad");
           // Invoke appropriate Cloud Functions action
           return invokeAction(actionParams, actionName);
         }
@@ -141,51 +139,10 @@ function main(params) {
 function getPayloadForActionInvocation(params, auth) {
   let actionName;
   let actionParams;
-  /*
-  let payload = 
-    {"payload" : 
-    {
-    "template_type":"button",
-    "text":"<MESSAGE_TEXT>",
-    "buttons":[
-     {
-      "type": "open Google map",
-      "url": "https://goo.gl/maps/nFD4jTfYwsF2",
-      "title": "View map"
-     }
-   ]
-   }
-  };
-  params.entry.messaging[0].message.attachments[0] = payload;
-  
-  const WatsonText = {
-    "From where are you leaving?" : 0,
-    "Would you like to know more details?" : 1,
-    "What would you like to know more about?" : 2   
-  }
-  const Response = [
-    ['My Location', 'Other'],
-    ['Yes', 'No'],
-    ['Traffic', 'TSA Lines', 'Flight delays']
-  ];
-   console.log(params);
-  
-  
-    //Checks if Watson issued a query wih buttons available as responses
-    if (Object.keys(WatsonText).length !== 0) {
-      for (button in WatsonText) {
-        if (text.indexOf(button) !== -1) return Response[WatsonText[button]];
-      }
-    }
-    return false;*/
-  
-  
   // Check if it's a batched message
   if (isBatchedMessage(params)) {
     // Set action params and action name for batched messages invocation
     actionParams = params;
-    console.log(params);
- 
     // Attach auth to params
     actionParams.auth = auth;
     actionName = params.batched_messages;
