@@ -75,7 +75,6 @@ const CLOUDANT_AUTH_KEY = 'cloudant_auth_key';
  */
 
 function main(params) {
-  console.log("HELLLLOOOO");
   return new Promise((resolve, reject) => {
     try {
       validateParameters(params);
@@ -142,6 +141,7 @@ function main(params) {
 function getPayloadForActionInvocation(params, auth) {
   let actionName;
   let actionParams;
+  /*
   let payload = 
     {"payload" : 
     {
@@ -156,7 +156,10 @@ function getPayloadForActionInvocation(params, auth) {
    ]
    }
   };
+  params.entry.messaging[0].message.attachments[0] = payload;
+  
   const WatsonText = {
+    "From where are you leaving?" : 0,
     "Would you like to know more details?" : 1,
     "What would you like to know more about?" : 2   
   }
@@ -166,6 +169,15 @@ function getPayloadForActionInvocation(params, auth) {
     ['Traffic', 'TSA Lines', 'Flight delays']
   ];
    console.log(params);
+  
+  
+    //Checks if Watson issued a query wih buttons available as responses
+    if (Object.keys(WatsonText).length !== 0) {
+      for (button in WatsonText) {
+        if (text.indexOf(button) !== -1) return Response[WatsonText[button]];
+      }
+    }
+    return false;*/
   
   
   // Check if it's a batched message
